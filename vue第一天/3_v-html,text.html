@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ppa">
+        <!-- <div v-html="hw"></div> -->
+        <div v-text="hw"></div>
+    </div>
+<script src="./vue.js"></script>
+<script>
+    /*
+        innerHTML == v-html
+        innerText == v-text
+    */
+    new Vue({
+        el:'.ppa',
+        data:{
+            hw:'<p>hello,世界!</p>'
+        }
+    });
+</script>
+</body>
+</html>

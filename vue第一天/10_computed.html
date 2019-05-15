@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <button @click="add">{{toDou(num)}}</button> -->
+        <button @click="add">{{to}}</button>
+        <h1>{{num}}</h1>
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        计算属性:
+            当数据发生变化的时候，
+            想监听这个数据并且想获得这个数据的另一种形态时
+            computed
+
+            使用computed，默认第一次会调用一次，当数据发生变化的时候，保持监听
+    */
+    new Vue({
+        el:'#app',
+        data:{
+            num:0
+        },
+        methods:{
+            add(){
+                this.num ++;
+            },
+            // toDou(num){
+            //     return num < 10?'0' + num:""+num;
+            // }
+        },
+        computed:{
+            to(){
+                /*
+                    let {num} = this; === this.num
+
+
+                    ES6解构赋值
+                    let {num,arr} = this
+
+                    num = xxx
+                    arr = xxx
+
+                    this.num = xxx;
+                    this.arr = xxx
+                */
+                let {num} = this;
+                return num < 10?'0' + num:""+num;
+            }
+        }
+        
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+}
+#box2{
+    width: 100px;
+    height: 100px;
+    background: #000;
+}
+/* #srcoll{
+    height: 3000px;
+} */
+</style>
+</head>
+<body>
+    <div id="app">
+       <!-- <div id="box" @click="a1">
+           <div id="box2" @click.stop="a2"></div>
+       </div> -->
+       <!-- <img src="./微信图片_20180604192956.jpg" 
+        id="srcoll" @mousedown.prevent /> -->
+        <input type="text" @keyup.13="fn"/>
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+        </ul>
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        stop : 阻止冒泡
+        prevent:阻止默认行为
+        13 || enter  回车
+
+        @click.stop.prevent="doThis"  既阻止默认行为还阻止冒泡
+    */
+
+//    document.onkeydown = function(ev){
+//        ev.preventDefault();
+//    }
+
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[]
+        },
+        methods:{
+            a1(){
+                alert('a1');
+            },
+            a2(ev){
+                alert('a2');
+                // ev.stopPropagation();
+            },
+            fn(ev){
+                // if(ev.keyCode === 13){
+                //     let {value} = ev.target;
+                //     this.arr.push(value);
+                //     ev.target.value = '';
+                // }
+                let {value} = ev.target;
+                this.arr.push(value);
+                ev.target.value = '';
+            }
+        }
+    });
+
+
+   
+
+</script>
+</body>
+</html>

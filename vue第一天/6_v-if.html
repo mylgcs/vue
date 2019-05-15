@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+}
+#box2{
+    width:50px;
+    height: 50px;
+    background: blue;
+}
+#box3{
+    width:50px;
+    height: 50px;
+    background: yellow;
+}
+</style>
+</head>
+<body>
+    <div id="app">
+        <div id="box" v-if="b"></div>
+        <div id="box3" v-else-if="r==0"></div>
+        <div id="box2" v-else></div>
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        v-show  显示隐藏  -> display:none/block
+
+        v-if    显示隐藏 -> 创建或者不创建
+
+        前一兄弟元素必须有 v-if 或 v-else-if。
+    */
+    new Vue({
+        el:'#app',
+        data:{
+            b:false,
+            r:1
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+            <!-- <li v-for="(val,key) in arr">{{val}}:{{key}}</li> -->
+            <!-- <li v-for="(val,key) in obj">{{key}}:{{val}}</li> -->
+        </ul>
+    </div>
+<script src="vue.js"></script>
+<script>
+   
+  let vm = new Vue({
+        el:'#app',
+        data:{
+            // arr:['小水晶','80岁','dudu','yellow','小生','susu','wy','师师','jl','残']
+            arr:[]
+            ,
+            // obj:{
+            //     name:'xq',
+            //     age:18,
+            //     job:'web'
+            // }
+        }
+    });
+
+
+    setTimeout(()=>{
+        vm.arr = ['小水晶','80岁','dudu','yellow','小生','susu','wy','师师','jl','残']
+    },3000)
+
+</script>
+</body>
+</html>

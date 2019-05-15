@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ppa">
+        {{hw}}
+    </div>
+<script src="./vue.js"></script>
+<script>
+    // console.log(Vue);
+    /*
+        el：挂载组件的元素
+        data:存放数据的容器
+    */
+    new Vue({
+        el:'.ppa',
+        data:{
+            hw:'hello,世界!'
+        }
+    });
+</script>
+</body>
+</html>

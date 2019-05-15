@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+}
+</style>
+</head>
+<body>
+    <div id="app">
+        <div id="box" v-show="b"></div>
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        v-show  显示隐藏
+    */
+    new Vue({
+        el:'#app',
+        data:{
+            b:false
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+}
+.bor{
+    border: 5px solid #000;
+}
+.col{
+    color: #fff;
+}
+</style>
+</head>
+<body>
+    <div class="ppa">
+       <!-- <div id="box" v-bind:class="{bor:onOff}">132132132</div> -->
+       <!-- <div id="box" :class="[b,c]">132132132</div> -->
+       <!-- <div id="box" :style="{fontSize:r,background:g}">132132132</div> -->
+       <div id="box" :style="[f,bb,bbb]">132132132</div>
+    </div>
+<script src="./vue.js"></script>
+<script>
+    /*
+       行间属性会改变的时候使用v-bind
+
+       动态改变img的src，改变class，style.......
+
+       v-bind:class === :class
+
+    */
+    new Vue({
+        el:'.ppa',
+        data:{
+           onOff:false,
+           b:'bor',
+           c:'col',
+           r:'24px',
+           g:'green',
+           f:{fontSize:'50px'},
+           bb:{background:'pink'},
+           bbb:{
+               border:'10px solid #000'
+           }
+        }
+    });
+</script>
+</body>
+</html>
