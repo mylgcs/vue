@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input 
+            type="text" 
+            v-model="msg"
+        />
+        {{listenMsg}}
+        <input type="checkbox" v-model="onoff"/> 
+        {{onoff}}
+
+        小生<input type="checkbox" value="小生" v-model="arr"/>  
+        80岁<input type="checkbox" value="80岁" v-model="arr"/>  
+        未央<input type="checkbox" value="未央" v-model="arr"/>  
+        {{arr}}
+
+        <hr />
+        <select v-model="city">
+            <option>上海市</option>
+            <option>北京市</option>
+            <option>广州市</option>
+            <option>昆明市</option>
+        </select>
+        {{city}}
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        v-model  专门用来操作表单的
+
+            双向数据绑定
+                通过数据能改变视图，也能通过视图改变数据
+
+        type="text"
+        .....
+    */
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            onoff:true,
+            arr:[],
+            city:'昆明市'
+        },
+        computed:{
+            listenMsg(){
+                return this.msg.replace(/\d+/g,'');
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" 
+            v-model="val"
+            @keyup.13="add"
+        />
+        <ul>
+            <li v-for="val in list">
+                <input type="checkbox" v-model="val.checked"/>
+                {{val.txt}}
+            </li>
+        </ul>
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        watch 一开始是不会执行的，当数据发生变化的时候才会触发
+
+        deep去深度监听数据内部变化
+    */
+    new Vue({
+        el:'#box',
+        data:{
+            list:JSON.parse(localStorage.getItem('data')) || [
+                {
+                    id:0,
+                    txt:'第一条数据',
+                    checked:false
+                }
+            ],
+            val:''
+        },
+        methods:{
+            add(){
+                this.list.push({
+                    txt:this.val,
+                    checked:false
+                });
+                // localStorage.setItem('data',JSON.stringify(this.list));
+                this.val = '';
+            }
+        },
+        watch:{
+            // list:function(){
+            //     //浅监听的时候可以是函数
+            //     console.log(1);  
+            // },
+            list:{
+                handler(){
+                    localStorage.setItem('data',JSON.stringify(this.list));
+                },
+                deep:true
+            }
+            
+        }
+    })
+</script>
+</body>
+</html>

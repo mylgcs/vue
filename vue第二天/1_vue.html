@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        {{string}}
+    </div>
+<script src="vue.js"></script>
+<script>
+    
+    /*
+        MVVM框架
+
+        通过数据去驱动视图
+
+        v- 指令
+
+        v-text  -> innerText
+        v-html  -> innerHTML
+
+        v-bind -> :src  :style  :class
+
+        v-on ->   @click.stop  @mouseover.enter  @mousedown.prevent
+
+        v-if 
+        v-else-if
+        v-else
+        v-show
+        v-for
+        computed
+
+
+    */
+
+    // box.innerHTML = '<p>123</p>'
+
+    new Vue({
+        el:'#box',
+        data:{
+            string:'321'          
+        }
+    });
+
+
+</script>
+</body>
+</html>

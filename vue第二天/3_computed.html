@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" :value="msg" @input="change"/>
+        {{listenMsg}}
+    </div>
+<script src="vue.js"></script>
+<script>
+    /*
+        过滤数字
+            @input - > oninput
+
+            @click  -> onclick
+    */
+    new Vue({
+        el:'#app',
+        data:{
+            msg:''
+        },
+        methods:{
+            change(ev){
+                this.msg = ev.target.value;
+            }
+        },
+        computed:{
+            listenMsg(){
+                return this.msg.replace(/\d+/,'');
+            }
+        }
+    })
+</script>
+</body>
+</html>
